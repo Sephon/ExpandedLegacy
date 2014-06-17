@@ -12,6 +12,9 @@ namespace ExpandedLegacy.Classes
     {
         public Vector2 Direction;
         public float Speed;
+        private Checkpoints _checkpoints = new Checkpoints();
+        public MathTools.Angles.Angle CurrentAngle;
+        public Enum.Actions.MoveState CurrentAction;
 
         public Character() { }
 
@@ -21,7 +24,7 @@ namespace ExpandedLegacy.Classes
             Position = position;
             Direction = direction;
             Speed = speed;
-            Size = size;
+            Size = size;           
         }
 
         public void Move() 
@@ -36,16 +39,34 @@ namespace ExpandedLegacy.Classes
 
         private void ModifyDirection()
         {
-            Direction.X = Mouse.GetState().X - Position.X;
-            Direction.Y = Mouse.GetState().Y - Position.Y;
+            var nextCheckpoint = _checkpoints.GetNextCheckpoint(this);
+            if (nextCheckpoint == null)
+            {
+                Direction.X = 0;
+                Direction.Y = 0;
+                CurrentAction = Enum.Actions.MoveState.Standing;
+                return;
+            }
+
+            CurrentAction = Enum.Actions.MoveState.Walking;
+            CurrentAngle = MathTools.Angles.GetAngleDescription(MathTools.Angles.GetAngle(this.Position, nextCheckpoint.Position));
+            Direction.X = nextCheckpoint.Position.X - Position.X;
+            Direction.Y = nextCheckpoint.Position.Y - Position.Y;
         }
 
-        public override void PerformActions()
+        private void HandleEvents(Vector2 leftMouseClickedPosition)
         {
+            if(leftMouseClickedPosition != Vector2.Zero)
+                _checkpoints.AddCheckpoint(leftMouseClickedPosition);
+        }
+
+        public override void PerformActions(GameTime gameTime, Vector2 leftMouseClickPosition)
+        {
+            HandleEvents(leftMouseClickPosition);
             ModifyDirection();
             Move();
 
-            base.PerformActions();
+            base.PerformActions(gameTime, leftMouseClickPosition);
         }
 
         public void SetSpeed(float speed)

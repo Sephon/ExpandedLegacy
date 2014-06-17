@@ -20,15 +20,6 @@
       <Time>2014-06-17T19:38:11.845878+02:00</Time>
     </Item>
     <Item>
-      <Source>grassmedi.jpg</Source>
-      <Name>grassmedi</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmedi.xnb</Output>
-      <Time>2014-06-17T19:39:04.4938893+02:00</Time>
-    </Item>
-    <Item>
       <Source>Alundra.png</Source>
       <Name>Alundra</Name>
       <Importer>TextureImporter</Importer>
@@ -45,6 +36,15 @@
       <Options>None</Options>
       <Output>C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\BasicFont.xnb</Output>
       <Time>2014-06-17T18:29:57.2816823+02:00</Time>
+    </Item>
+    <Item>
+      <Source>grassmedi.jpg</Source>
+      <Name>grassmedi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmedi.xnb</Output>
+      <Time>2014-06-17T19:39:04.4938893+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

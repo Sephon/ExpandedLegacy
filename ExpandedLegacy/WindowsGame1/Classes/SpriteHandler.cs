@@ -19,10 +19,15 @@ namespace ExpandedLegacy.Classes
             //spriteMap = content.Load<Texture2D>("Alundra");
         }
 
-        public virtual void DrawSprite(Classes.WorldItem item, SpriteBatch spriteBatch, int state)
+        public virtual void DrawSprite(Classes.WorldItem item, SpriteBatch spriteBatch, int animationState, MathTools.Angles.Angle eightDirectionAngle)
         {
             var sourceRect = new Rectangle(0, 0, 20, 20);
-            spriteBatch.Draw(spriteMap, item.GetRectangle(), sourceRect, Color.White, 0f, new Vector2(0, 0), SpriteEffects.None, 0);
+            spriteBatch.Draw(spriteMap, item.GetRectangle(), sourceRect, Color.White,  0f, new Vector2(0, 0), SpriteEffects.None, 0);
+        }
+
+        public virtual int GetAnimationUpperBound()
+        {
+            return 0;
         }
     }
 }

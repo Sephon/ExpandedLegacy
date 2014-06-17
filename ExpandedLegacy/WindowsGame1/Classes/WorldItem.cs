@@ -48,7 +48,7 @@ namespace ExpandedLegacy.Classes
             return new Rectangle((int) Position.X, (int) Position.Y, (int) useSizeX, (int) useSizeY);
         }
 
-        public virtual void PerformActions()
+        public virtual void PerformActions(GameTime gameTime, Vector2 leftMouseClick)
         {
             
         }

@@ -5,7 +5,6 @@ C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Alundra.
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\BasicFont.xnb
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\ExpandedLegacy.exe
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\ExpandedLegacy.pdb
-C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.csprojResolveAssemblyReference.cache
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.exe
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.pdb

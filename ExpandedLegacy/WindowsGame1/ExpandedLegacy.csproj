@@ -73,10 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Character.cs" />
+    <Compile Include="Classes\Checkpoints.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\SpriteHandler.cs" />
     <Compile Include="Classes\WorldItem.cs" />
-    <Compile Include="Loaders\ComposeAlundraSprites.cs" />
+    <Compile Include="Enum\Action.cs" />
+    <Compile Include="SpriteHandlers\AlundraSpriteHandler.cs" />
     <Compile Include="Loaders\Preload.cs" />
     <Compile Include="MathTools\Angles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

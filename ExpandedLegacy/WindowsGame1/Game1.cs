@@ -21,7 +21,8 @@ namespace ExpandedLegacy
         private SpriteFont basicFont;
         private List<Classes.WorldItem> worldItems;
         private List<Classes.WorldItem> tiles;
-        public MouseState MouseState;
+        public MouseState PreviousMouseState;
+        private Vector2 _leftMouseClickPosition = Vector2.Zero;
 
         public Game1()
         {
@@ -79,19 +80,36 @@ namespace ExpandedLegacy
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                this.Exit();
+            CheckInputAction();
 
             // TODO: Add your update logic here
             foreach (var worlditem in worldItems)
             {
-                worlditem.PerformActions();
+                worlditem.PerformActions(gameTime, _leftMouseClickPosition);
             }
 
-            MouseState = Mouse.GetState();
-
             base.Update(gameTime);
+
+            ClearStates();
+        }
+
+        private void ClearStates()
+        {
+            PreviousMouseState = Mouse.GetState();
+
+            _leftMouseClickPosition = Vector2.Zero;
+        }
+
+        protected void CheckInputAction()
+        {
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                this.Exit();
+
+            if (PreviousMouseState.LeftButton == ButtonState.Pressed && Mouse.GetState().LeftButton == ButtonState.Released)
+            {
+                _leftMouseClickPosition = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            }
         }
 
         /// <summary>
@@ -110,11 +128,12 @@ namespace ExpandedLegacy
             }
             
             // Draw strings
-            var fontPosition = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
-            //var angle = (string)string.Concat(MathTools.Angles.GetAngle(worldItems[0].Position, new Vector2(MouseState.X, MouseState.Y)), " atan");
-            var character = (Classes.Character)worldItems[0];
-            var message = string.Concat("Direction: ", character.Direction);
-            spriteBatch.DrawString(basicFont, message , fontPosition, Color.Black);
+            //var fontPosition = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
+            //var angle = MathTools.Angles.GetAngleDescription(MathTools.Angles.GetAngle(worldItems[0].Position, new Vector2(MouseState.X, MouseState.Y)));
+            //var angle = MathTools.Angles.AngleBetweenVectors(worldItems[0].Position, new Vector2(MouseState.X, MouseState.Y)).ToString();
+            //var character = (Classes.Character)worldItems[0];
+            //var message = string.Concat("Direction: ", angle);
+            //spriteBatch.DrawString(basicFont, message , fontPosition, Color.Black);
             
             spriteBatch.End();
 
