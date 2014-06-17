@@ -1,0 +1,12 @@
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\pixel.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Grass.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmini.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmedi.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Alundra.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\BasicFont.xnb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\ExpandedLegacy.exe
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\ExpandedLegacy.pdb
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.csprojResolveAssemblyReference.cache
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.exe
+C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\obj\x86\Debug\ExpandedLegacy.pdb
