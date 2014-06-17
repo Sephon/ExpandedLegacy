@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace WindowsGame1.Classes
+namespace ExpandedLegacy.Classes
 {
     partial class WorldItem
     {
@@ -35,6 +35,7 @@ namespace WindowsGame1.Classes
             Size = size;
         }
 
+
         public Rectangle GetRectangle()
         {
             var useSizeX = this.Sprite.Height;
@@ -44,12 +45,17 @@ namespace WindowsGame1.Classes
                     useSizeX = (int) this.Size.X;
                     useSizeY = (int )  this.Size.Y;
                 }
-            return new Rectangle(this.Sprite.Bounds.X, this.Sprite.Bounds.Y, (int) useSizeX, (int) useSizeY);
+            return new Rectangle((int) Position.X, (int) Position.Y, (int) useSizeX, (int) useSizeY);
         }
 
         public virtual void PerformActions()
         {
             
+        }
+
+        public virtual void Render(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Sprite, Position, GetRectangle(), Color);
         }
     }
 }

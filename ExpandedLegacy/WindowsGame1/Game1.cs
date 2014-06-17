@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace WindowsGame1
+namespace ExpandedLegacy
 {
     /// <summary>
     /// This is the main type for your game
@@ -41,6 +41,11 @@ namespace WindowsGame1
             worldItems = new List<Classes.WorldItem>();
             tiles = new List<Classes.WorldItem>();
             this.IsMouseVisible = true;
+            graphics.PreferredBackBufferHeight = 1080;
+            graphics.PreferredBackBufferWidth = 1920;
+            //graphics.IsFullScreen = true;
+
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -75,7 +80,7 @@ namespace WindowsGame1
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
@@ -101,13 +106,15 @@ namespace WindowsGame1
                 spriteBatch.Begin();
             foreach (var worlditem in worldItems)
             {
-                spriteBatch.Draw(worlditem.Sprite, worlditem.Position, worlditem.GetRectangle(), worlditem.Color);
+                worlditem.Render(spriteBatch);
             }
             
             // Draw strings
             var fontPosition = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
-            var angle = (string)string.Concat(MathTools.Angles.GetAngle(worldItems[0].Position, new Vector2(MouseState.X, MouseState.Y)), " atan");
-            spriteBatch.DrawString(basicFont, angle, fontPosition, Color.Black);
+            //var angle = (string)string.Concat(MathTools.Angles.GetAngle(worldItems[0].Position, new Vector2(MouseState.X, MouseState.Y)), " atan");
+            var character = (Classes.Character)worldItems[0];
+            var message = string.Concat("Direction: ", character.Direction);
+            spriteBatch.DrawString(basicFont, message , fontPosition, Color.Black);
             
             spriteBatch.End();
 

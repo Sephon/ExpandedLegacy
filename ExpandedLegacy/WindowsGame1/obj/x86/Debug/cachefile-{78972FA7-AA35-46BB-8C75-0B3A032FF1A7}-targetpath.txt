@@ -1,5 +1,4 @@
 Content\pixel.xnb
-Content\Grass.xnb
 Content\grassmini.xnb
 Content\grassmedi.xnb
 Content\Alundra.xnb

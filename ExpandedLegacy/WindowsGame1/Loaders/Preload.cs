@@ -6,15 +6,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace WindowsGame1.Loaders
+namespace ExpandedLegacy.Loaders
 {
     class Preload
     {
         public Preload(ContentManager content, List<Classes.WorldItem> worldItems)
         {
-            AddTiles(content, worldItems);
+            //AddTiles(content, worldItems);
 
             var item1 = new Classes.Player(new Vector2(100f, 100f), new Vector2(11f, 11f), content.Load<Texture2D>("pixel"), new Vector2(0, 0), 1.0f);
+            item1.LoadSpriteHandler(new ComposeAlundraSprites(content));
             item1.SetColor(Color.Black);
             worldItems.Add(item1);
         }

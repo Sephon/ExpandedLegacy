@@ -11,15 +11,6 @@
       <Time>2014-06-17T18:16:17.2747806+02:00</Time>
     </Item>
     <Item>
-      <Source>GrassGreenTexture0006.jpg</Source>
-      <Name>Grass</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Grass.xnb</Output>
-      <Time>2014-06-17T19:25:39.1148242+02:00</Time>
-    </Item>
-    <Item>
       <Source>grassmini.jpg</Source>
       <Name>grassmini</Name>
       <Importer>TextureImporter</Importer>

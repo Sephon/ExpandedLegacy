@@ -6,12 +6,13 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace WindowsGame1.Classes 
+namespace ExpandedLegacy.Classes 
 {
     class Player : Character
     {
         private const float DEFAULTSPEED = 1;
         private const float MAXSPEED = 15;
+        private SpriteHandler spriteHandler;
 
         public Player(Vector2 position, Vector2 size, Texture2D sprite, Vector2 direction, float speed)
         {
@@ -22,12 +23,17 @@ namespace WindowsGame1.Classes
             Size = size;
         }
 
+        public void LoadSpriteHandler(SpriteHandler spriteHandler)
+        {
+            this.spriteHandler = spriteHandler;
+        }
+
         private void handleModifiers()
         {
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 if(Speed <= MAXSPEED) 
-                    Speed *= 1.1f;
+                    Speed *= 1.05f;
             } 
             else
             {
@@ -43,5 +49,10 @@ namespace WindowsGame1.Classes
             base.PerformActions();
         }
 
+        public override void Render(SpriteBatch spriteBatch)
+        {
+            spriteHandler.DrawSprite(this, spriteBatch, 1);
+            //spriteBatch.Draw(Sprite, Position, GetRectangle(), Color);
+        }
     }
 }

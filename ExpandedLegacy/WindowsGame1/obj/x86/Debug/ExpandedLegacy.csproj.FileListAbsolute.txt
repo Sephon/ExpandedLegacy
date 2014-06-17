@@ -1,5 +1,4 @@
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\pixel.xnb
-C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Grass.xnb
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmini.xnb
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\grassmedi.xnb
 C:\GIT\ExpandedLegacy\ExpandedLegacy\WindowsGame1\bin\x86\Debug\Content\Alundra.xnb

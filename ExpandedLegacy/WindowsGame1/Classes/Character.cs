@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace WindowsGame1.Classes
+namespace ExpandedLegacy.Classes
 {
     class Character : WorldItem
     {
